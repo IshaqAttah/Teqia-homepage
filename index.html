@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teqia – Empowering Africa's Digital Future</title>
+    <meta
+      name="description"
+      content="Teqia provides free, world-class training in DevOps, Cybersecurity, and Software Engineering to underprivileged youth, connecting them with mentors and career-defining opportunities."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Teqia home">
+          <img src="assets/teqia-logo.png" alt="" width="53" height="24" />
+          <span>Teqia</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#programs">Programs</a>
+          <a href="#impact">Impact</a>
+          <a href="#stories">Stories</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="link-quiet" href="/login">Log In</a>
+          <a class="btn btn-primary btn-sm" href="/donate">Donate</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-menu container" id="mobile-menu" hidden>
+        <a href="#programs">Programs</a>
+        <a href="#impact">Impact</a>
+        <a href="#stories">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="mobile-menu-actions">
+          <a class="btn btn-outline-primary" href="/login">Log In</a>
+          <a class="btn btn-primary" href="/donate">Donate</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="container hero">
+        <div class="hero-copy">
+          <h1>
+            Steering Young Africans Away from Cybercrime and Vice, Toward
+            Futures in Tech.
+          </h1>
+          <p class="lead">
+            We provide free, world-class training in DevOps, Cybersecurity, and
+            Software Engineering to underprivileged youth, connecting them with
+            mentors and career-defining opportunities.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="/donate">Become a Donor</a>
+            <a class="btn btn-outline" href="/become-a-mentor"
+              >Become a Mentor</a
+            >
+            <a class="btn btn-outline" href="/become-a-volunteer"
+              >Become a Volunteer</a
+            >
+          </div>
+        </div>
+        <div class="hero-media">
+          <img
+            src="assets/hero-community.jpg"
+            width="1280"
+            height="960"
+            alt="Teqia team members standing with students in school uniforms at a community outreach event"
+          />
+        </div>
+      </section>
+
+      <!-- Impact stats -->
+      <section class="stats-band" id="impact" aria-label="Our impact">
+        <div class="container">
+          <ul class="stats">
+            <li class="stat"><strong>9</strong><span>People Trained</span></li>
+            <li class="stat">
+              <strong>₦1M+</strong><span>Funds Deployed</span>
+            </li>
+            <li class="stat">
+              <strong>85%</strong><span>Completion Rate</span>
+            </li>
+            <li class="stat">
+              <strong>3</strong><span>Employed or Freelancing</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Programs -->
+      <section class="container section" id="programs">
+        <div class="section-head">
+          <h2 class="section-title">Our Programs</h2>
+          <div class="slider-controls">
+            <button
+              class="slider-btn"
+              type="button"
+              data-dir="-1"
+              aria-label="Previous programs"
+              aria-controls="programs-track"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path
+                  d="M15 5l-7 7 7 7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              class="slider-btn"
+              type="button"
+              data-dir="1"
+              aria-label="Next programs"
+              aria-controls="programs-track"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path
+                  d="M9 5l7 7-7 7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="cards"
+          id="programs-track"
+          tabindex="0"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Our programs"
+        >
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="16"
+                  rx="2.5"
+                  fill="currentColor"
+                />
+                <path
+                  d="M7.5 9.5 10 12l-2.5 2.5M12.5 15h4"
+                  stroke="#e5e9ef"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+            <h3>DevOps Fundamentals</h3>
+            <p>Master infrastructure automation and CI/CD pipelines.</p>
+            <a class="card-link" href="/programs/devops"
+              >Learn More <span aria-hidden="true">→</span></a
+            >
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path
+                  d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.8 7.5 10 4.3-1.2 7.5-5.4 7.5-10v-6L12 2.5Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M12 7.5v8.5c-2-.7-3.5-2.8-3.5-5V9l3.5-1.5Z"
+                  fill="#e5e9ef"
+                />
+              </svg>
+            </div>
+            <h3>Cybersecurity Foundations</h3>
+            <p>Defend against modern digital threats and secure the future.</p>
+            <a class="card-link" href="/programs/cybersecurity"
+              >Learn More <span aria-hidden="true">→</span></a
+            >
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path
+                  d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 9H7Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Cloud Engineering</h3>
+            <p>Build and scale resilient applications in the cloud.</p>
+            <a class="card-link" href="/programs/cloud"
+              >Learn More <span aria-hidden="true">→</span></a
+            >
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path
+                  d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Software Engineering</h3>
+            <p>Build real-world web and mobile applications from idea to launch.</p>
+            <a class="card-link" href="/programs/software-engineering"
+              >Learn More <span aria-hidden="true">→</span></a
+            >
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <rect x="4" y="12" width="4" height="8" rx="1" fill="currentColor" />
+                <rect x="10" y="8" width="4" height="12" rx="1" fill="currentColor" />
+                <rect x="16" y="4" width="4" height="16" rx="1" fill="currentColor" />
+              </svg>
+            </div>
+            <h3>Business Analysis</h3>
+            <p>Turn business problems into clear requirements and data-driven solutions.</p>
+            <a class="card-link" href="/programs/business-analysis"
+              >Learn More <span aria-hidden="true">→</span></a
+            >
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path
+                  d="M10 3.5l1.6 4.4a3 3 0 0 0 1.8 1.8l4.4 1.6-4.4 1.6a3 3 0 0 0-1.8 1.8L10 19l-1.6-4.3a3 3 0 0 0-1.8-1.8L2.2 11.3l4.4-1.6a3 3 0 0 0 1.8-1.8L10 3.5Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M18.5 2.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8ZM18.5 15.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6.6-1.4Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <h3>AI Engineering</h3>
+            <p>Design, build, and deploy intelligent applications with modern AI tools.</p>
+            <a class="card-link" href="/programs/ai-engineering"
+              >Learn More <span aria-hidden="true">→</span></a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA banner -->
+      <section class="cta" id="stories">
+        <div class="cta-inner">
+          <h2>Your support creates careers, not just certificates.</h2>
+          <div class="button-row button-row-center">
+            <a class="btn btn-light" href="/donate">Donate</a>
+            <a class="btn btn-outline-light" href="/become-a-volunteer"
+              >Volunteer</a
+            >
+            <a class="btn btn-outline-light" href="/become-a-mentor">Mentor</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div class="footer-brand" id="about">
+          <a class="brand" href="/" aria-label="Teqia home">
+            <img src="assets/teqia-logo.png" alt="" width="53" height="24" />
+            <span>Teqia</span>
+          </a>
+          <p>
+            © <span data-year>2026</span> Teqia. Empowering Africa's digital
+            future.
+          </p>
+        </div>
+        <nav class="footer-col" aria-label="Explore">
+          <h4>Explore</h4>
+          <a href="#programs">Programs</a>
+          <a href="#impact">Impact</a>
+          <a href="#stories">Stories</a>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <nav class="footer-col footer-col-small" aria-label="Legal">
+          <h4>Legal</h4>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>

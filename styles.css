@@ -657,6 +657,31 @@ h1, h2, h3, h4, p { margin: 0; }
 .faq-card a:hover { text-decoration: underline; }
 @media (min-width: 768px) { .faq-q h3 { font-size: 20px; } }
 
+/* ---------- Coming soon (404) ---------- */
+.soon { display: grid; place-items: center; padding-block: var(--space-xl); min-height: 70vh; }
+.soon-card {
+  width: 100%; max-width: 40rem;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-md);
+  padding: 40px var(--space-md);
+  text-align: center;
+  background: var(--surface-container-lowest);
+  border: 1px solid rgb(195 198 208 / .7);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px -2px rgb(0 29 61 / .08);
+}
+@media (min-width: 640px) { .soon-card { padding: 56px 48px; } }
+.soon-card .chip { align-self: center; }
+.soon-icon {
+  display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 16px;
+  background: var(--tertiary-fixed); color: var(--primary);
+}
+.soon-card h1 { font: 700 30px/1.15 var(--font-headline); letter-spacing: -0.02em; color: var(--primary); }
+@media (min-width: 768px) { .soon-card h1 { font-size: 40px; } }
+.soon-note { text-align: left; }
+.soon-note a { color: var(--primary); font-weight: 600; white-space: nowrap; }
+.soon-note a:hover { text-decoration: underline; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }

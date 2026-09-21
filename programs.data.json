@@ -21,7 +21,13 @@
       "level": "novice",
       "summary": "Never used a computer? Start here.",
       "description": "The very beginning: what the parts of a computer do, switching one on and off safely, using a mouse and keyboard, saving your work where you can find it again, and typing without hunting for every letter.",
-      "skills": ["Using a mouse and keyboard", "Files and folders", "Typing", "Installing software", "Looking after a machine"],
+      "skills": [
+        "Using a mouse and keyboard",
+        "Files and folders",
+        "Typing",
+        "Installing software",
+        "Looking after a machine"
+      ],
       "duration": "6 weeks",
       "certification": null,
       "next": "digital-literacy",
@@ -42,9 +48,11 @@
           "title": "Software and staying tidy",
           "weeks": "Weeks 5 to 6",
           "description": "Installing and removing programs, updates, storage, and what to do when something goes wrong.",
-          "deliverable": "Set up a machine from scratch"
+          "deliverable": "Set up a machine from scratch",
+          "capstone": true
         }
-      ]
+      ],
+      "icon": "monitor"
     },
     {
       "slug": "digital-literacy",
@@ -53,11 +61,18 @@
       "level": "novice",
       "summary": "Get online, get things done, and stay safe doing it.",
       "description": "Email, search, video calls and the habits that keep you safe online: spotting a scam before it costs you, protecting your accounts, and understanding what happens to your own data.",
-      "skills": ["Email", "Search", "Video calls", "Account security", "Spotting scams"],
+      "skills": [
+        "Email",
+        "Search",
+        "Video calls",
+        "Account security",
+        "Spotting scams"
+      ],
       "duration": "6 weeks",
       "certification": null,
       "next": "office-tools",
-      "modules": []
+      "modules": [],
+      "icon": "globe"
     },
     {
       "slug": "office-tools",
@@ -66,11 +81,18 @@
       "level": "novice",
       "summary": "The everyday tools employers expect you to know.",
       "description": "Writing documents that look professional, working with numbers in spreadsheets, and putting together a presentation you can stand up and deliver.",
-      "skills": ["Documents", "Spreadsheets", "Formulas", "Presentations", "Printing and sharing"],
+      "skills": [
+        "Documents",
+        "Spreadsheets",
+        "Formulas",
+        "Presentations",
+        "Printing and sharing"
+      ],
       "duration": "8 weeks",
       "certification": null,
       "next": "introduction-to-programming",
-      "modules": []
+      "modules": [],
+      "icon": "file"
     },
     {
       "slug": "introduction-to-programming",
@@ -79,11 +101,18 @@
       "level": "novice",
       "summary": "Your first lines of code.",
       "description": "How a program thinks, how to break a problem into steps a machine can follow, and how to build something small that actually runs. The bridge between knowing a computer and building with one.",
-      "skills": ["Problem solving", "Variables and loops", "Functions", "Reading errors", "Python basics"],
+      "skills": [
+        "Problem solving",
+        "Variables and loops",
+        "Functions",
+        "Reading errors",
+        "Python basics"
+      ],
       "duration": "10 weeks",
       "certification": null,
       "next": "software-engineering",
-      "modules": []
+      "modules": [],
+      "icon": "keyboard"
     },
     {
       "slug": "software-engineering",
@@ -92,11 +121,18 @@
       "level": "mid",
       "summary": "Build real web and mobile applications from idea to launch.",
       "description": "Building real applications with TypeScript and React, storing data properly, writing APIs other people can use, and reviewing code as a team rather than working alone.",
-      "skills": ["TypeScript", "React", "Node.js", "PostgreSQL", "REST APIs"],
+      "skills": [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "REST APIs"
+      ],
       "duration": null,
       "certification": null,
       "next": "cloud",
-      "modules": []
+      "modules": [],
+      "icon": "code"
     },
     {
       "slug": "cybersecurity",
@@ -105,11 +141,18 @@
       "level": "mid",
       "summary": "Defend systems against the threats you already read about.",
       "description": "Practical defence work: finding and fixing vulnerabilities, watching a network for trouble, and responding when something goes wrong, with preparation for a recognised certification.",
-      "skills": ["Networking", "Linux", "SIEM", "Vulnerability management", "Incident response"],
+      "skills": [
+        "Networking",
+        "Linux",
+        "SIEM",
+        "Vulnerability management",
+        "Incident response"
+      ],
       "duration": null,
       "certification": "CompTIA Security+",
       "next": "devops",
-      "modules": []
+      "modules": [],
+      "icon": "shield"
     },
     {
       "slug": "business-analysis",
@@ -118,11 +161,18 @@
       "level": "mid",
       "summary": "Turn business problems into clear requirements and decisions.",
       "description": "Sitting between the people with the problem and the people building the answer: gathering requirements, mapping processes, and using spreadsheets, SQL and dashboards to back a decision with evidence.",
-      "skills": ["Requirements", "SQL", "Excel", "Power BI", "Process mapping"],
+      "skills": [
+        "Requirements",
+        "SQL",
+        "Excel",
+        "Power BI",
+        "Process mapping"
+      ],
       "duration": null,
       "certification": null,
       "next": "ai-engineering",
-      "modules": []
+      "modules": [],
+      "icon": "chart"
     },
     {
       "slug": "cloud",
@@ -131,11 +181,18 @@
       "level": "advanced",
       "summary": "Build and scale systems that stay up.",
       "description": "Hands-on cloud architecture: scalable storage, identity and access management done properly, and infrastructure that survives one part failing, with preparation for a recognised certification.",
-      "skills": ["AWS", "IAM", "Networking", "Serverless", "Monitoring"],
+      "skills": [
+        "AWS",
+        "IAM",
+        "Networking",
+        "Serverless",
+        "Monitoring"
+      ],
       "duration": null,
       "certification": "AWS Cloud Practitioner",
       "next": "devops",
-      "modules": []
+      "modules": [],
+      "icon": "cloud"
     },
     {
       "slug": "devops",
@@ -144,7 +201,15 @@
       "level": "advanced",
       "summary": "Automate the path from code to production.",
       "description": "Linux, containers with Docker, orchestration with Kubernetes, and pipelines that ship code safely. The longest programme we run, ending in a production project you present publicly.",
-      "skills": ["Linux", "Git", "Docker", "Kubernetes", "Terraform", "AWS", "CI/CD"],
+      "skills": [
+        "Linux",
+        "Git",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "AWS",
+        "CI/CD"
+      ],
       "duration": "24 weeks",
       "certification": null,
       "next": "ai-engineering",
@@ -189,9 +254,11 @@
           "title": "Capstone Production Project",
           "weeks": "Weeks 22 to 24",
           "description": "An end to end project with a GitOps pipeline, automated tests, and Prometheus and Grafana monitoring.",
-          "deliverable": "Public demo day presentation"
+          "deliverable": "Public demo day presentation",
+          "capstone": true
         }
-      ]
+      ],
+      "icon": "terminal"
     },
     {
       "slug": "ai-engineering",
@@ -200,11 +267,18 @@
       "level": "advanced",
       "summary": "Build and ship applications that use modern AI.",
       "description": "Python, the fundamentals of machine learning, and working with large language models: designing, building and deploying applications that use AI for something genuinely useful.",
-      "skills": ["Python", "Machine learning", "LLMs", "APIs", "Data pipelines"],
+      "skills": [
+        "Python",
+        "Machine learning",
+        "LLMs",
+        "APIs",
+        "Data pipelines"
+      ],
       "duration": null,
       "certification": null,
       "next": null,
-      "modules": []
+      "modules": [],
+      "icon": "sparkle"
     }
   ]
 }

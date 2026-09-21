@@ -9,6 +9,21 @@ const root = dirname(fileURLToPath(import.meta.url));
 const { levels, programs } = JSON.parse(readFileSync(join(root, "programs.data.json"), "utf8"));
 const ASSET_VERSION = "5";
 
+const ICONS = {
+  monitor: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2" fill="currentColor"/><path d="M9 20.5h6M12 17.5v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>',
+  globe: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M3.5 14.5h17M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  file: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h7.5L19 8.5V21H6V3Z" fill="currentColor"/><path d="M9 12.5h7M9 16h5" stroke="#e5e9ef" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>',
+  keyboard: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8.5 5.5 12 9 15.5M15 8.5 18.5 12 15 15.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg>',
+  code: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.8 7.5 10 4.3-1.2 7.5-5.4 7.5-10v-6L12 2.5Z" fill="currentColor"/></svg>',
+  chart: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="12" width="4" height="8" rx="1" fill="currentColor"/><rect x="10" y="8" width="4" height="12" rx="1" fill="currentColor"/><rect x="16" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>',
+  cloud: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 9H7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  terminal: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="currentColor"/><path d="M7.5 9.5 10 12l-2.5 2.5M12.5 15h4" stroke="#e5e9ef" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>',
+  sparkle: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3.5l1.6 4.4a3 3 0 0 0 1.8 1.8l4.4 1.6-4.4 1.6a3 3 0 0 0-1.8 1.8L10 19l-1.6-4.3a3 3 0 0 0-1.8-1.8L2.2 11.3l4.4-1.6a3 3 0 0 0 1.8-1.8L10 3.5Z" fill="currentColor"/></svg>',
+};
+
+const CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12.5l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+
 const escape = (value) =>
   String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -119,16 +134,18 @@ const foot = `
 
 const modulesBlock = (program) =>
   program.modules.length
-    ? `        <ol class="module-list">
+    ? `        <ol class="timeline">
 ${program.modules
   .map(
-    (module, index) => `          <li class="module">
-            <span class="module-step" aria-hidden="true">${index + 1}</span>
-            <div>
-              <p class="module-weeks">${escape(module.weeks)}</p>
-              <h3>${escape(module.title)}</h3>
+    (module, index) => `          <li class="tl-item${module.capstone ? " tl-item-capstone" : ""}">
+            <span class="tl-dot">${index + 1}</span>
+            <div class="tl-body">
+              <div class="tl-head">
+                <h3>${index + 1}. ${escape(module.title)}${module.capstone ? ' <span class="tl-tag">Final project</span>' : ""}</h3>
+                <span class="tl-weeks">${escape(module.weeks)}</span>
+              </div>
               <p>${escape(module.description)}</p>
-              <p class="module-deliverable">You finish with: ${escape(module.deliverable)}</p>
+              <p class="tl-meta"><span>${CHECK} You finish with: ${escape(module.deliverable)}</span></p>
             </div>
           </li>`,
   )
@@ -144,80 +161,102 @@ const page = (program) => {
   const level = levels[program.level];
   const next = program.next ? programs.find((item) => item.slug === program.next) : null;
   const facts = [
-    ["Level", level.label],
     ["How long", program.duration ?? "To be confirmed"],
+    ["Level", level.label],
     ["Certification", program.certification ?? "Portfolio projects"],
     ["Cost to you", "Free, always"],
   ];
 
   return `${head(program.title, program.summary)}
     <main id="main">
-      <section class="container program-hero">
-        <a class="back-link" href="/#programs">
+      <div class="container program-page">
+        <a class="back-link" href="/programs/">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
             <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           All programs
         </a>
 
-        <p class="program-tags">
-          <span class="card-level card-level-${program.level}">${escape(level.label)}</span>
-          <span class="program-track">${escape(program.track)}</span>
-        </p>
-        <h1>${escape(program.title)}</h1>
-        <p class="lead">${escape(program.description)}</p>
+        <section class="panel program-hero-panel">
+          <div class="panel-row">
+            <div>
+              <p class="chip-row">
+                <span class="pill pill-track">${ICONS[program.icon]} ${escape(program.track)}</span>
+                <span class="pill pill-level-${program.level}">${escape(level.label)}</span>
+                <span class="pill pill-free">Free for students</span>
+              </p>
+              <h1>${escape(program.title)}</h1>
+              <p class="lead">${escape(program.description)}</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="/become-a-beneficiary">Apply to learn this</a>
+              <a class="btn btn-outline-primary" href="/donate">Fund this program</a>
+            </div>
+          </div>
 
-        <div class="button-row">
-          <a class="btn btn-primary" href="/become-a-beneficiary">Apply to learn this</a>
-          <a class="btn btn-outline-primary" href="/donate">Fund this program</a>
-        </div>
-      </section>
-
-      <section class="band section-tight" aria-label="Key facts">
-        <div class="container">
-          <ul class="facts">
+          <ul class="fact-row">
 ${facts
   .map(([label, value]) => `            <li><span>${escape(label)}</span><strong>${escape(value)}</strong></li>`)
   .join("\n")}
           </ul>
-        </div>
-      </section>
+        </section>
 
-      <section class="container section program-body">
-        <h2 class="section-title">Who this is for</h2>
-        <p class="section-lead">${escape(level.who)}</p>
+        <section class="panel">
+          <h2 class="panel-title">Is this the right start for you?</h2>
+          <p class="panel-lead">
+            Every program has a level. Pick the one that matches where you are today,
+            not where you wish you were.
+          </p>
+          <div class="split">
+            <div class="mini-card">
+              <h3>Who this is for</h3>
+              <p>${escape(level.who)}</p>
+            </div>
+            <div class="mini-card">
+              <h3>What you need</h3>
+              <p>
+                Time to study each week, and a laptop if you have one. If you do not
+                have a laptop or steady internet, say so on your application. It will
+                not count against you.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <h2 class="section-title section-title-spaced">What you will learn</h2>
-        <ul class="skill-list">
-${program.skills.map((skill) => `          <li>${escape(skill)}</li>`).join("\n")}
-        </ul>
+        <section class="panel">
+          <h2 class="panel-title">What you will learn</h2>
+          <p class="panel-lead">The skills you leave with, and use in the work you build.</p>
+          <ul class="skill-list">
+${program.skills.map((skill) => `            <li>${escape(skill)}</li>`).join("\n")}
+          </ul>
+        </section>
 
-        <h2 class="section-title section-title-spaced">What we cover</h2>
+        <section class="panel">
+          <h2 class="panel-title">Curriculum roadmap</h2>
+          <p class="panel-lead">
+            Every module is hands on, reviewed by a mentor, and finishes with something
+            you can show.
+          </p>
 ${modulesBlock(program)}
+        </section>
 
-        <h2 class="section-title section-title-spaced">What you need</h2>
-        <p class="section-lead">
-          Time to study each week, and a laptop if you have one. If you do not have a
-          laptop or steady internet, say so on your application. It will not count
-          against you, and we will tell you what support we can offer.
-        </p>
-      </section>
-
-      ${
-        next
-          ? `<section class="container section program-body">
-        <h2 class="section-title">Where this leads</h2>
-        <a class="next-card" href="/programs/${next.slug}/">
-          <span class="card-level card-level-${next.level}">${escape(levels[next.level].label)}</span>
-          <span>
-            <strong>${escape(next.title)}</strong>
-            <span>${escape(next.summary)}</span>
-          </span>
-          <span class="next-arrow" aria-hidden="true">→</span>
-        </a>
-      </section>`
-          : ""
-      }
+        ${
+          next
+            ? `<section class="panel">
+          <h2 class="panel-title">Where this leads</h2>
+          <p class="panel-lead">Finish this one and you are ready for the next step.</p>
+          <a class="next-card" href="/programs/${next.slug}/">
+            <span class="pill pill-level-${next.level}">${escape(levels[next.level].label)}</span>
+            <span>
+              <strong>${escape(next.title)}</strong>
+              <span>${escape(next.summary)}</span>
+            </span>
+            <span class="next-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </section>`
+            : ""
+        }
+      </div>
 
       <section class="cta">
         <div class="cta-inner">

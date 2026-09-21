@@ -6,7 +6,7 @@
     <title>Teqia – Empowering Africa's Digital Future</title>
     <meta
       name="description"
-      content="Teqia provides free tech education to young Nigerians who can't afford it — from your first time using a computer through to software engineering, cloud, security and AI — with mentors and real opportunities at the end."
+      content="Teqia provides free tech education to young Nigerians who can't afford it, from your first time using a computer through to software engineering, cloud, security and AI."
     />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,7 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
+    <script>
+      // Set before paint so sections start hidden only when scripting and motion are available
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("reveal-ready");
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -86,10 +92,9 @@
             Futures in Tech.
           </h1>
           <p class="lead">
-            We provide free tech education to young people who can't afford it —
+            We provide free tech education to young people who can't afford it,
             starting from your very first time using a computer, through to
-            software engineering, cloud, cybersecurity, data and AI. You learn
-            with a mentor beside you, and we help you find work at the end.
+            software engineering, cloud, cybersecurity, data and AI.
           </p>
           <div class="button-row">
             <a class="btn btn-primary" href="/become-a-beneficiary"
@@ -138,7 +143,7 @@
           <h2 class="section-title">Our Programs</h2>
           <p class="section-lead">
             Start where you are. If you have never touched a computer, begin at
-            the novice level and work your way up — each level prepares you for
+            the novice level and work your way up. Each level prepares you for
             the next.
           </p>
         </div>
@@ -265,7 +270,7 @@
               <span class="card-level card-level-novice">Novice</span>
             </div>
             <h3>Digital Literacy &amp; Online Safety</h3>
-            <p>Email, search, video calls and staying safe online — spotting scams, protecting your accounts and looking after your own data.</p>
+            <p>Email, search, video calls and staying safe online: spotting scams, protecting your accounts and looking after your own data.</p>
             <a class="card-link" href="/programs/digital-literacy"
               >Learn More <span aria-hidden="true">&rarr;</span></a
             >
@@ -446,6 +451,6 @@
       </div>
     </footer>
 
-    <script src="main.js?v=2" defer></script>
+    <script src="main.js?v=3" defer></script>
   </body>
 </html>

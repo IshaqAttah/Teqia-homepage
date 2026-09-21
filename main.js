@@ -121,7 +121,7 @@ if (soonTitle) {
     ['/login', 'Log In is coming soon.', 'Portals for donors, mentors, volunteers and beneficiaries are on the way.'],
     ['/register', 'Sign Up is coming soon.', 'Portals for donors, mentors, volunteers and beneficiaries are on the way.'],
     ['/donate', 'Online donations are coming soon.', "We're setting up a secure way to give online. Until then, contact us and we'll share how you can support Teqia today."],
-    ['/become-a-beneficiary', 'Applications to learn are coming soon.', "We're building the application form now. Until it's ready, contact us and tell us what you want to learn and where you are starting from — no experience needed."],
+    ['/become-a-beneficiary', 'Applications to learn are coming soon.', "We're building the application form now. Until it's ready, contact us and tell us what you want to learn and where you are starting from. No experience needed."],
     ['/register?role=beneficiary', 'Applications to learn are coming soon.', "We're building the application form now. Until it's ready, contact us and tell us what you want to learn."],
     ['/become-a-mentor', 'Mentor applications are coming soon.', "We'd love your expertise. Until the application form is ready, send us a message about your skills and availability."],
     ['/become-a-volunteer', 'Volunteer applications are coming soon.', 'Thank you for wanting to help. Until the application form is ready, send us a message and tell us how you would like to get involved.'],
@@ -135,4 +135,77 @@ if (soonTitle) {
     soonTitle.textContent = match[1];
     document.getElementById('soon-text').textContent = match[2];
   }
+}
+
+// Fade sections in as they scroll into view
+const revealSelectors = [
+  '.hero-copy',
+  '.hero-media',
+  '.stats-band .stat',
+  '.section-head',
+  '.programs-bar',
+  '#programs-track',
+  '.cta-inner',
+  '.band > .container > *',
+  '.container.section > *',
+  '.site-footer .footer-grid > *',
+];
+
+if (document.documentElement.classList.contains('reveal-ready')) {
+  const targets = [...new Set(revealSelectors.flatMap((selector) => [...document.querySelectorAll(selector)]))];
+  targets.forEach((el, index) => {
+    el.classList.add('reveal');
+    // A small stagger so a row of cards or stats arrives in sequence rather than all at once
+    el.style.transitionDelay = `${(index % 4) * 80}ms`;
+  });
+
+  const show = (el) => {
+    el.classList.add('is-visible');
+    el.style.transitionDelay = el.style.transitionDelay || '';
+  };
+
+  // Anything within a screen of the viewport is shown; also the safety net if the
+  // observer is unavailable or throttled, so nothing can stay invisible.
+  const showWhatIsInView = () => {
+    let remaining = false;
+    targets.forEach((el) => {
+      if (el.classList.contains('is-visible')) return;
+      const box = el.getBoundingClientRect();
+      if (box.top < window.innerHeight * 0.95 && box.bottom > 0) show(el);
+      else remaining = true;
+    });
+    return remaining;
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          show(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.05 },
+    );
+    targets.forEach((el) => observer.observe(el));
+  }
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      if (!showWhatIsInView()) {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+      }
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  showWhatIsInView();
+  window.addEventListener('load', showWhatIsInView);
 }

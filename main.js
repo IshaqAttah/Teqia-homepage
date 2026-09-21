@@ -125,7 +125,6 @@ if (soonTitle) {
     ['/register?role=beneficiary', 'Applications to learn are coming soon.', "We're building the application form now. Until it's ready, contact us and tell us what you want to learn."],
     ['/become-a-mentor', 'Mentor applications are coming soon.', "We'd love your expertise. Until the application form is ready, send us a message about your skills and availability."],
     ['/become-a-volunteer', 'Volunteer applications are coming soon.', 'Thank you for wanting to help. Until the application form is ready, send us a message and tell us how you would like to get involved.'],
-    ['/programs/', 'Program details are coming soon.', "We're putting together full details for each of our programs. Contact us if you'd like to join or learn more now."],
     ['/privacy', 'Our Privacy Policy is coming soon.', "We're finalising our Privacy Policy. If you have questions about how we handle your information, contact us."],
     ['/terms', 'Our Terms of Service are coming soon.', "We're finalising our Terms of Service. If you have any questions in the meantime, contact us."],
   ];

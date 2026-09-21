@@ -1,0 +1,210 @@
+{
+  "levels": {
+    "novice": {
+      "label": "Novice",
+      "who": "You have never used a computer, or you use a phone but have never worked on a laptop. No experience is needed and nobody will make you feel behind."
+    },
+    "mid": {
+      "label": "Mid-level",
+      "who": "You can use a computer comfortably, find your way around the internet, and now want skills that lead to paid work."
+    },
+    "advanced": {
+      "label": "Advanced",
+      "who": "You have already built, coded or configured something yourself, and you want the depth that production work demands."
+    }
+  },
+  "programs": [
+    {
+      "slug": "introduction-to-computers",
+      "title": "Introduction to Computers",
+      "track": "Introduction to Computers",
+      "level": "novice",
+      "summary": "Never used a computer? Start here.",
+      "description": "The very beginning: what the parts of a computer do, switching one on and off safely, using a mouse and keyboard, saving your work where you can find it again, and typing without hunting for every letter.",
+      "skills": ["Using a mouse and keyboard", "Files and folders", "Typing", "Installing software", "Looking after a machine"],
+      "duration": "6 weeks",
+      "certification": null,
+      "next": "digital-literacy",
+      "modules": [
+        {
+          "title": "Getting started",
+          "weeks": "Weeks 1 to 2",
+          "description": "Parts of a computer, switching on and off safely, the desktop, windows, and using a mouse and keyboard.",
+          "deliverable": "Set up your own user account"
+        },
+        {
+          "title": "Files, folders and typing",
+          "weeks": "Weeks 3 to 4",
+          "description": "Saving and finding your work, organising folders, copying to a USB drive, and building typing speed.",
+          "deliverable": "A tidy folder of your own work"
+        },
+        {
+          "title": "Software and staying tidy",
+          "weeks": "Weeks 5 to 6",
+          "description": "Installing and removing programs, updates, storage, and what to do when something goes wrong.",
+          "deliverable": "Set up a machine from scratch"
+        }
+      ]
+    },
+    {
+      "slug": "digital-literacy",
+      "title": "Digital Literacy & Online Safety",
+      "track": "Digital Literacy",
+      "level": "novice",
+      "summary": "Get online, get things done, and stay safe doing it.",
+      "description": "Email, search, video calls and the habits that keep you safe online: spotting a scam before it costs you, protecting your accounts, and understanding what happens to your own data.",
+      "skills": ["Email", "Search", "Video calls", "Account security", "Spotting scams"],
+      "duration": "6 weeks",
+      "certification": null,
+      "next": "office-tools",
+      "modules": []
+    },
+    {
+      "slug": "office-tools",
+      "title": "Documents, Spreadsheets & Presentations",
+      "track": "Office Tools",
+      "level": "novice",
+      "summary": "The everyday tools employers expect you to know.",
+      "description": "Writing documents that look professional, working with numbers in spreadsheets, and putting together a presentation you can stand up and deliver.",
+      "skills": ["Documents", "Spreadsheets", "Formulas", "Presentations", "Printing and sharing"],
+      "duration": "8 weeks",
+      "certification": null,
+      "next": "introduction-to-programming",
+      "modules": []
+    },
+    {
+      "slug": "introduction-to-programming",
+      "title": "Introduction to Programming",
+      "track": "Introduction to Programming",
+      "level": "novice",
+      "summary": "Your first lines of code.",
+      "description": "How a program thinks, how to break a problem into steps a machine can follow, and how to build something small that actually runs. The bridge between knowing a computer and building with one.",
+      "skills": ["Problem solving", "Variables and loops", "Functions", "Reading errors", "Python basics"],
+      "duration": "10 weeks",
+      "certification": null,
+      "next": "software-engineering",
+      "modules": []
+    },
+    {
+      "slug": "software-engineering",
+      "title": "Software Engineering",
+      "track": "Software Engineering",
+      "level": "mid",
+      "summary": "Build real web and mobile applications from idea to launch.",
+      "description": "Building real applications with TypeScript and React, storing data properly, writing APIs other people can use, and reviewing code as a team rather than working alone.",
+      "skills": ["TypeScript", "React", "Node.js", "PostgreSQL", "REST APIs"],
+      "duration": null,
+      "certification": null,
+      "next": "cloud",
+      "modules": []
+    },
+    {
+      "slug": "cybersecurity",
+      "title": "Cybersecurity Foundations",
+      "track": "Cybersecurity",
+      "level": "mid",
+      "summary": "Defend systems against the threats you already read about.",
+      "description": "Practical defence work: finding and fixing vulnerabilities, watching a network for trouble, and responding when something goes wrong, with preparation for a recognised certification.",
+      "skills": ["Networking", "Linux", "SIEM", "Vulnerability management", "Incident response"],
+      "duration": null,
+      "certification": "CompTIA Security+",
+      "next": "devops",
+      "modules": []
+    },
+    {
+      "slug": "business-analysis",
+      "title": "Business Analysis",
+      "track": "Business Analysis",
+      "level": "mid",
+      "summary": "Turn business problems into clear requirements and decisions.",
+      "description": "Sitting between the people with the problem and the people building the answer: gathering requirements, mapping processes, and using spreadsheets, SQL and dashboards to back a decision with evidence.",
+      "skills": ["Requirements", "SQL", "Excel", "Power BI", "Process mapping"],
+      "duration": null,
+      "certification": null,
+      "next": "ai-engineering",
+      "modules": []
+    },
+    {
+      "slug": "cloud",
+      "title": "Cloud Engineering",
+      "track": "Cloud",
+      "level": "advanced",
+      "summary": "Build and scale systems that stay up.",
+      "description": "Hands-on cloud architecture: scalable storage, identity and access management done properly, and infrastructure that survives one part failing, with preparation for a recognised certification.",
+      "skills": ["AWS", "IAM", "Networking", "Serverless", "Monitoring"],
+      "duration": null,
+      "certification": "AWS Cloud Practitioner",
+      "next": "devops",
+      "modules": []
+    },
+    {
+      "slug": "devops",
+      "title": "DevOps Fundamentals",
+      "track": "DevOps",
+      "level": "advanced",
+      "summary": "Automate the path from code to production.",
+      "description": "Linux, containers with Docker, orchestration with Kubernetes, and pipelines that ship code safely. The longest programme we run, ending in a production project you present publicly.",
+      "skills": ["Linux", "Git", "Docker", "Kubernetes", "Terraform", "AWS", "CI/CD"],
+      "duration": "24 weeks",
+      "certification": null,
+      "next": "ai-engineering",
+      "modules": [
+        {
+          "title": "Orientation & Linux Foundations",
+          "weeks": "Weeks 1 to 3",
+          "description": "Shell scripting, users and permissions, process management, networking fundamentals and server configuration.",
+          "deliverable": "Automated server setup script"
+        },
+        {
+          "title": "Git & Team Collaboration",
+          "weeks": "Weeks 4 to 6",
+          "description": "Branching strategies, resolving merge conflicts, pull request reviews and pre-commit hooks.",
+          "deliverable": "Team repository project"
+        },
+        {
+          "title": "Docker & Containers",
+          "weeks": "Weeks 7 to 10",
+          "description": "Multi-stage Dockerfiles, image optimisation, container networking, volumes and Docker Compose.",
+          "deliverable": "Containerised three-tier application"
+        },
+        {
+          "title": "AWS Cloud Infrastructure & IAM",
+          "weeks": "Weeks 11 to 14",
+          "description": "VPC and subnet design, EC2 auto scaling, load balancers, least-privilege IAM policies and monitoring.",
+          "deliverable": "Highly available web architecture"
+        },
+        {
+          "title": "Kubernetes & Helm",
+          "weeks": "Weeks 15 to 18",
+          "description": "Pods, deployments, ingress, Helm charts, ConfigMaps, secrets and rolling updates.",
+          "deliverable": "Application deployed to a Kubernetes cluster"
+        },
+        {
+          "title": "Terraform & Infrastructure as Code",
+          "weeks": "Weeks 19 to 21",
+          "description": "Declarative infrastructure, remote state, reusable modules and automated drift detection.",
+          "deliverable": "Reusable Terraform stack"
+        },
+        {
+          "title": "Capstone Production Project",
+          "weeks": "Weeks 22 to 24",
+          "description": "An end to end project with a GitOps pipeline, automated tests, and Prometheus and Grafana monitoring.",
+          "deliverable": "Public demo day presentation"
+        }
+      ]
+    },
+    {
+      "slug": "ai-engineering",
+      "title": "AI Engineering",
+      "track": "AI Engineering",
+      "level": "advanced",
+      "summary": "Build and ship applications that use modern AI.",
+      "description": "Python, the fundamentals of machine learning, and working with large language models: designing, building and deploying applications that use AI for something genuinely useful.",
+      "skills": ["Python", "Machine learning", "LLMs", "APIs", "Data pipelines"],
+      "duration": null,
+      "certification": null,
+      "next": null,
+      "modules": []
+    }
+  ]
+}

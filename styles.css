@@ -814,3 +814,106 @@ h1, h2, h3, h4, p { margin: 0; }
   .reveal-ready .reveal { opacity: 1; transform: none; }
   .reveal-ready .reveal.is-visible { transition: none; }
 }
+
+/* ---------- Program detail pages ---------- */
+.program-hero { padding-block: var(--space-lg) var(--space-md); }
+.program-hero h1 {
+  font: 700 32px/1.15 var(--font-headline);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-sm);
+}
+.program-hero .lead { margin-bottom: var(--space-md); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-bottom: var(--space-md);
+  font: 600 14px/1 var(--font-body);
+  color: var(--on-surface-variant);
+}
+.back-link:hover { color: var(--primary); }
+.program-tags { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); }
+.program-track { font: 700 12px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--on-surface-variant); }
+
+@media (min-width: 768px) {
+  .program-hero h1 { font-size: 44px; }
+}
+
+.facts {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: var(--space-md);
+  grid-template-columns: repeat(2, 1fr);
+}
+.facts li { display: flex; flex-direction: column; gap: 4px; }
+.facts span { font-size: 13px; color: var(--on-surface-variant); }
+.facts strong { font: 700 18px/1.2 var(--font-headline); color: var(--primary); }
+@media (min-width: 768px) { .facts { grid-template-columns: repeat(4, 1fr); } }
+
+.section-title-spaced { margin-top: var(--space-lg); }
+.section-lead + .section-title-spaced { margin-top: var(--space-lg); }
+
+.skill-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.skill-list li {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  font: 600 14px/1 var(--font-body);
+  color: var(--primary);
+}
+
+.module-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+.module {
+  display: flex; gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+}
+.module-step {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--primary); color: var(--on-primary);
+  font: 700 15px/1 var(--font-body);
+}
+.module h3 { font: 700 18px/1.3 var(--font-headline); margin-bottom: 4px; }
+.module p { color: var(--on-surface-variant); }
+.module-weeks { font: 700 12px/1 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--secondary); margin-bottom: 6px; }
+.module-deliverable { margin-top: 8px; font-size: 14px; color: var(--primary); font-weight: 600; }
+
+.note-plain {
+  padding: var(--space-md);
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  color: var(--on-surface-variant);
+}
+
+.next-card {
+  display: flex; align-items: center; gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  transition: border-color .2s, transform .2s;
+}
+.next-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.next-card strong { display: block; font: 700 18px/1.3 var(--font-headline); color: var(--primary); }
+.next-card span span { color: var(--on-surface-variant); font-size: 14px; }
+.next-card > span:nth-child(2) { flex: 1; }
+.next-arrow { font-size: 20px; color: var(--secondary); }
+
+.program-grid { display: grid; gap: var(--gutter); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .program-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .program-grid { grid-template-columns: repeat(3, 1fr); } }
+.program-grid .card { text-decoration: none; }
+
+.cta-lead { max-width: 52ch; margin-inline: auto; color: var(--on-primary-container); }
+
+/* Tighter rhythm on the program pages so headings sit with their text */
+.section-tight { padding-block: var(--space-md); }
+.program-body .section-title { margin-bottom: var(--space-sm); }
+.program-body .section-lead { margin-bottom: var(--space-md); }
+.program-body .section-title-spaced { margin-top: var(--space-lg); }
+.programs-all { font: 600 14px/1 var(--font-body); color: var(--secondary); white-space: nowrap; }
+.programs-all:hover { color: var(--primary); text-decoration: underline; }

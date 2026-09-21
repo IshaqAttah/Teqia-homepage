@@ -53,8 +53,14 @@ if (track) {
 
   if (levelFilters.length) {
     const cards = [...track.querySelectorAll('.card')];
-    const count = document.getElementById('programs-count');
-    const labels = { all: 'programs', novice: 'novice programs', mid: 'mid-level programs', advanced: 'advanced programs' };
+    const note = document.getElementById('programs-count');
+    const total = cards.length;
+
+    // Counts next to each filter, worked out from the cards themselves
+    document.querySelectorAll('[data-count-for]').forEach((el) => {
+      const level = el.dataset.countFor;
+      el.textContent = level === 'all' ? total : cards.filter((card) => card.dataset.level === level).length;
+    });
 
     const apply = (level) => {
       let shown = 0;
@@ -70,8 +76,10 @@ if (track) {
         btn.setAttribute('aria-pressed', String(active));
       });
 
-      if (count) {
-        count.textContent = `Showing ${shown} ${shown === 1 ? labels[level].replace(/s$/, '') : labels[level]}.`;
+      if (note) {
+        note.textContent = level === 'all'
+          ? `${total} programs`
+          : `${shown} of ${total} programs`;
       }
 
       track.scrollTo({ left: 0 });

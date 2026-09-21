@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -134,68 +134,100 @@
 
       <!-- Programs -->
       <section class="container section" id="programs">
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">Our Programs</h2>
-            <p class="section-lead">
-              Start where you are. If you have never touched a computer, begin
-              at the novice level and work your way up — each level prepares you
-              for the next.
-            </p>
-          </div>
-          <div class="slider-controls">
-            <button
-              class="slider-btn"
-              type="button"
-              data-dir="-1"
-              aria-label="Previous programs"
-              aria-controls="programs-track"
-            >
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path
-                  d="M15 5l-7 7 7 7"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <button
-              class="slider-btn"
-              type="button"
-              data-dir="1"
-              aria-label="Next programs"
-              aria-controls="programs-track"
-            >
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path
-                  d="M9 5l7 7-7 7"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
+        <div class="section-head section-head-stacked">
+          <h2 class="section-title">Our Programs</h2>
+          <p class="section-lead">
+            Start where you are. If you have never touched a computer, begin at
+            the novice level and work your way up — each level prepares you for
+            the next.
+          </p>
         </div>
 
-        <div class="level-filters" role="group" aria-label="Filter programs by level">
-          <button class="level-chip is-active" type="button" data-level-filter="all" aria-pressed="true">
-            All levels
-          </button>
-          <button class="level-chip" type="button" data-level-filter="novice" aria-pressed="false">
-            Novice
-          </button>
-          <button class="level-chip" type="button" data-level-filter="mid" aria-pressed="false">
-            Mid-level
-          </button>
-          <button class="level-chip" type="button" data-level-filter="advanced" aria-pressed="false">
-            Advanced
-          </button>
+        <div class="programs-bar">
+          <div
+            class="level-filters"
+            role="group"
+            aria-label="Filter programs by level"
+          >
+            <button
+              class="level-chip is-active"
+              type="button"
+              data-level-filter="all"
+              aria-pressed="true"
+            >
+              All levels
+              <span class="level-count" data-count-for="all"></span>
+            </button>
+            <button
+              class="level-chip"
+              type="button"
+              data-level-filter="novice"
+              aria-pressed="false"
+            >
+              Novice
+              <span class="level-count" data-count-for="novice"></span>
+            </button>
+            <button
+              class="level-chip"
+              type="button"
+              data-level-filter="mid"
+              aria-pressed="false"
+            >
+              Mid-level
+              <span class="level-count" data-count-for="mid"></span>
+            </button>
+            <button
+              class="level-chip"
+              type="button"
+              data-level-filter="advanced"
+              aria-pressed="false"
+            >
+              Advanced
+              <span class="level-count" data-count-for="advanced"></span>
+            </button>
+          </div>
+
+          <div class="programs-bar-end">
+            <p class="programs-note" id="programs-count" role="status"></p>
+            <div class="slider-controls">
+              <button
+                class="slider-btn"
+                type="button"
+                data-dir="-1"
+                aria-label="Previous programs"
+                aria-controls="programs-track"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path
+                    d="M15 5l-7 7 7 7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                class="slider-btn"
+                type="button"
+                data-dir="1"
+                aria-label="Next programs"
+                aria-controls="programs-track"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path
+                    d="M9 5l7 7-7 7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div
@@ -366,7 +398,6 @@
             >
           </article>
         </div>
-        <p class="programs-note" id="programs-count" role="status"></p>
       </section>
 
       <!-- CTA banner -->
@@ -415,6 +446,6 @@
       </div>
     </footer>
 
-    <script src="main.js" defer></script>
+    <script src="main.js?v=2" defer></script>
   </body>
 </html>

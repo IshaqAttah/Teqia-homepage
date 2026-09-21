@@ -47,6 +47,40 @@ if (track) {
   track.addEventListener('scroll', updateButtons, { passive: true });
   window.addEventListener('resize', updateButtons);
   updateButtons();
+
+  // Program level filter: novice, mid-level, advanced
+  const levelFilters = document.querySelectorAll('[data-level-filter]');
+
+  if (levelFilters.length) {
+    const cards = [...track.querySelectorAll('.card')];
+    const count = document.getElementById('programs-count');
+    const labels = { all: 'programs', novice: 'novice programs', mid: 'mid-level programs', advanced: 'advanced programs' };
+
+    const apply = (level) => {
+      let shown = 0;
+      cards.forEach((card) => {
+        const match = level === 'all' || card.dataset.level === level;
+        card.hidden = !match;
+        if (match) shown += 1;
+      });
+
+      levelFilters.forEach((btn) => {
+        const active = btn.dataset.levelFilter === level;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', String(active));
+      });
+
+      if (count) {
+        count.textContent = `Showing ${shown} ${shown === 1 ? labels[level].replace(/s$/, '') : labels[level]}.`;
+      }
+
+      track.scrollTo({ left: 0 });
+      updateButtons();
+    };
+
+    levelFilters.forEach((btn) => btn.addEventListener('click', () => apply(btn.dataset.levelFilter)));
+    apply('all');
+  }
 }
 
 // Contact form: no backend yet, so open the visitor's email app with the message pre-filled
@@ -79,6 +113,8 @@ if (soonTitle) {
     ['/login', 'Log In is coming soon.', 'Portals for donors, mentors, volunteers and beneficiaries are on the way.'],
     ['/register', 'Sign Up is coming soon.', 'Portals for donors, mentors, volunteers and beneficiaries are on the way.'],
     ['/donate', 'Online donations are coming soon.', "We're setting up a secure way to give online. Until then, contact us and we'll share how you can support Teqia today."],
+    ['/become-a-beneficiary', 'Applications to learn are coming soon.', "We're building the application form now. Until it's ready, contact us and tell us what you want to learn and where you are starting from — no experience needed."],
+    ['/register?role=beneficiary', 'Applications to learn are coming soon.', "We're building the application form now. Until it's ready, contact us and tell us what you want to learn."],
     ['/become-a-mentor', 'Mentor applications are coming soon.', "We'd love your expertise. Until the application form is ready, send us a message about your skills and availability."],
     ['/become-a-volunteer', 'Volunteer applications are coming soon.', 'Thank you for wanting to help. Until the application form is ready, send us a message and tell us how you would like to get involved.'],
     ['/programs/', 'Program details are coming soon.', "We're putting together full details for each of our programs. Contact us if you'd like to join or learn more now."],

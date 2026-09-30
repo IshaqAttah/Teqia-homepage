@@ -92,25 +92,9 @@ if (track) {
 }
 
 // Contact form: no backend yet, so open the visitor's email app with the message pre-filled
-const contactForm = document.getElementById('contact-form');
-
-if (contactForm) {
-  const status = document.getElementById('form-status');
-
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(contactForm);
-    const name = data.get('name').trim();
-    const reason = data.get('reason');
-    const subject = `[Website] ${reason} – ${name}`;
-    const body = `Name: ${name}\nEmail: ${data.get('email')}\nReason: ${reason}\n\n${data.get('message')}`;
-
-    window.location.href = `mailto:info@teqia.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    status.textContent = "Your email app should open with your message ready to send. If it doesn't, email us directly at info@teqia.org.";
-    status.hidden = false;
-  });
-}
+// The contact form posts to the API, in contact.js. It used to open the visitor's own
+// email client, which on a machine with no mail client configured does nothing at all and
+// says nothing, and the person walks away believing they have written to Teqia.
 
 // Coming soon (404): name the page the visitor was looking for
 const soonTitle = document.getElementById('soon-title');

@@ -584,6 +584,9 @@ h1, h2, h3, h4, p { margin: 0; }
   background: #e6f0fb; color: var(--primary);
   font: 500 14px/1.5 var(--font-body);
 }
+/* A form that could not get through says so in a different colour from one that did.
+   The same blue box for both is how somebody reads a failure as a success. */
+.form-status-error { background: #fdecec; color: #8c1d18; }
 
 /* Direct channels */
 .channels { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
@@ -986,3 +989,39 @@ h1, h2, h3, h4, p { margin: 0; }
 .cta-lead { max-width: 52ch; margin-inline: auto; color: var(--on-primary-container); }
 .programs-all { font: 600 14px/1 var(--font-body); color: var(--secondary); white-space: nowrap; }
 .programs-all:hover { color: var(--primary); text-decoration: underline; }
+
+/* Forms on the public site that post to the API: the invite and the concern report.
+   Built from the same pieces as the contact form, with two additions it did not need. */
+.field-row { display: grid; gap: 20px; }
+@media (min-width: 640px) { .field-row { grid-template-columns: 1fr 1fr; } }
+
+.checks { display: flex; flex-direction: column; gap: 10px; }
+.check {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--outline-variant); border-radius: var(--radius-xl);
+  background: var(--surface);
+  font: 500 14px/1.4 var(--font-body);
+  cursor: pointer;
+}
+.check:hover { border-color: var(--primary); }
+.check input { margin-top: 2px; accent-color: var(--primary); flex-shrink: 0; }
+.check:has(input:checked) { border-color: var(--primary); background: #e6f0fb; }
+.check:has(input:focus-visible) { box-shadow: 0 0 0 3px rgb(0 50 98 / .15); }
+
+fieldset.field { border: 0; margin: 0; padding: 0; }
+fieldset.field legend {
+  font: 600 14px/1.2 var(--font-body); letter-spacing: 0.01em;
+  color: var(--on-surface); margin-bottom: 6px; padding: 0;
+}
+
+/* A warning that somebody must not scroll past. */
+.note-urgent { background: #fdecec; border-color: #f3c6c2; color: #8c1d18; }
+.note-urgent svg { color: #8c1d18; }
+.note-urgent a { color: #8c1d18; text-decoration: underline; }
+.optional { font-weight: 400; color: var(--on-surface-variant); }
+.panel-inset {
+  padding: 20px; border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl); background: var(--surface);
+}
+.panel-inset legend { padding: 0 6px; }

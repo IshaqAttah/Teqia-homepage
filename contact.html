@@ -106,13 +106,7 @@
           <h2>Send us a message</h2>
           <p class="panel-intro">Fill out the form below and we'll connect you with the right person on our team.</p>
 
-          <form
-            class="form"
-            id="contact-form"
-            action="mailto:info@teqia.org"
-            method="post"
-            enctype="text/plain"
-          >
+          <form class="form" id="contact-form">
             <div class="field">
               <label for="full-name">Full Name</label>
               <div class="input-wrap">
@@ -141,14 +135,14 @@
                 </span>
                 <select id="reason" name="reason" required>
                   <option value="" disabled selected>Select a reason...</option>
-                  <option>Invite Teqia to a school or community</option>
-                  <option>Join a training program</option>
-                  <option>Mentorship</option>
-                  <option>Volunteering</option>
-                  <option>Donations &amp; sponsorship</option>
-                  <option>Partnerships</option>
-                  <option>Press &amp; media</option>
-                  <option>General inquiry</option>
+                  <option value="outreach">Invite Teqia to a school or community</option>
+                  <option value="applying">Join a training program</option>
+                  <option value="mentorship">Mentorship</option>
+                  <option value="mentorship">Volunteering</option>
+                  <option value="donations">Donations &amp; sponsorship</option>
+                  <option value="partnership">Partnerships</option>
+                  <option value="other">Press &amp; media</option>
+                  <option value="other">General inquiry</option>
                 </select>
                 <span class="select-chevron" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -322,6 +316,8 @@
         </nav>
         <nav class="footer-col" aria-label="Company">
           <h4>Company</h4>
+          <a href="invite-teqia.html">Invite Teqia</a>
+          <a href="report-a-concern.html">Report a concern</a>
           <a href="about.html">About</a>
           <a href="contact.html" aria-current="page">Contact</a>
         </nav>
@@ -333,6 +329,7 @@
       </div>
     </footer>
 
-    <script src="main.js?v=5" defer></script>
+    <script src="main.js?v=6" defer></script>
+    <script type="module" src="contact.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invite Teqia – Teqia Grassroot Foundation</title>
+    <meta
+      name="description"
+      content="Ask Teqia Grassroot Foundation to visit your school, church, mosque or community centre in Kaduna or Abuja. There is no charge."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=5" />
+    <script>
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("reveal-ready");
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Teqia home">
+          <img src="assets/teqia-logo.png" alt="" width="53" height="24" />
+          <span>Teqia</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html#programs">Programs</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="index.html#stories">Stories</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="link-quiet" href="/login">Log In</a>
+          <a class="btn btn-primary btn-sm" href="/donate">Donate</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-menu container" id="mobile-menu" hidden>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#stories">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="mobile-menu-actions">
+          <a class="btn btn-outline-primary" href="/login">Log In</a>
+          <a class="btn btn-primary" href="/donate">Donate</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="container page-hero">
+        <div class="page-hero-inner">
+          <p class="eyebrow">For schools and communities</p>
+          <h1>Ask Teqia to come to you.</h1>
+          <p class="lead">
+            Teqia visits schools, churches, mosques and community centres across Kaduna and Abuja,
+            and talks to young people about staying safe online, and about the work that exists in
+            technology. There is no charge.
+          </p>
+          <div class="note">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p>
+              Teqia writes back either way, usually within a week. Please do not hold a date until
+              you have heard from us.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container contact-grid">
+        <div class="panel panel-lg">
+          <h2>Tell us about your students</h2>
+          <p class="panel-intro">The more you say here, the better the session fits them.</p>
+
+          <form class="form" id="invite-form">
+            <div class="field">
+              <label for="organisation">School, church, mosque or centre</label>
+              <div class="input-wrap">
+                <input id="organisation" name="organisation" type="text" placeholder="e.g., Government Girls Secondary School, Malali" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="state">State</label>
+                <div class="input-wrap">
+                  <input id="state" name="state" type="text" placeholder="Kaduna" required />
+                </div>
+              </div>
+              <div class="field">
+                <label for="lga">Local government area</label>
+                <div class="input-wrap">
+                  <input id="lga" name="lga" type="text" placeholder="Kaduna North" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="audience">Who would Teqia be speaking to?</label>
+                <div class="input-wrap">
+                  <select id="audience" name="audience" required>
+                    <option value="" disabled selected>Select...</option>
+                    <option value="secondary">Secondary school students</option>
+                    <option value="primary">Primary school pupils</option>
+                    <option value="out-of-school">Young people not in school</option>
+                    <option value="mixed">A mixed audience</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="audienceSize">Roughly how many?</label>
+                <div class="input-wrap">
+                  <input id="audienceSize" name="audienceSize" type="number" min="1" placeholder="e.g., 200" required />
+                </div>
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend>What would you like Teqia to talk about?</legend>
+              <p class="form-note" style="margin-bottom:10px">Choose as many as apply.</p>
+              <div class="checks">
+                <label class="check"><input type="checkbox" name="topics" value="Staying safe online" /> <span>Staying safe online</span></label>
+                <label class="check"><input type="checkbox" name="topics" value="Cybercrime and its consequences" /> <span>Cybercrime and its consequences</span></label>
+                <label class="check"><input type="checkbox" name="topics" value="Work that exists in technology" /> <span>Work that exists in technology</span></label>
+                <label class="check"><input type="checkbox" name="topics" value="Drug abuse" /> <span>Drug abuse</span></label>
+                <label class="check"><input type="checkbox" name="topics" value="Getting started with computers" /> <span>Getting started with computers</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="preferredDates">When would suit you?</label>
+              <div class="input-wrap">
+                <input id="preferredDates" name="preferredDates" type="text" placeholder="e.g., any Wednesday in October, mornings" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="requesterName">Your name</label>
+                <div class="input-wrap">
+                  <input id="requesterName" name="requesterName" type="text" autocomplete="name" required />
+                </div>
+              </div>
+              <div class="field">
+                <label for="requesterRole">Your role there</label>
+                <div class="input-wrap">
+                  <input id="requesterRole" name="requesterRole" type="text" placeholder="Principal, counsellor, youth leader" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email address</label>
+                <div class="input-wrap">
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@school.edu.ng" required />
+                </div>
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <div class="input-wrap">
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+234 800 000 0000" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Anything else Teqia should know</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell Teqia what you are seeing. It shapes what the session covers."></textarea>
+            </div>
+
+            <p class="form-note">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" /></svg>
+              Your details are used to arrange the visit and nothing else.
+            </p>
+
+            <button class="btn btn-primary btn-submit" type="submit">
+              Ask Teqia to visit
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </button>
+
+            <p class="form-status" id="form-status" role="status" hidden></p>
+          </form>
+        </div>
+
+        <div class="stack">
+          <div class="panel">
+            <h2>What a visit looks like</h2>
+            <p>
+              One or two hours, in your hall or a classroom. Teqia brings everything needed. Every
+              facilitator who works with under-18s has been vetted first, and Teqia will not send
+              somebody who has not been.
+            </p>
+          </div>
+          <div class="panel">
+            <h2>Rather talk first?</h2>
+            <p>Call <a href="tel:+2349023302308">+234 902 330 2308</a> or email <a href="mailto:info@teqia.org">info@teqia.org</a>.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Teqia home">
+            <img src="assets/teqia-logo.png" alt="" width="53" height="24" />
+            <span>Teqia</span>
+          </a>
+          <p>© <span data-year>2026</span> Teqia Grassroot Foundation. Empowering Africa's digital future.</p>
+          <p class="footer-note">CAC Reg. No. 8061564 · Kaduna, Nigeria</p>
+        </div>
+        <nav class="footer-col" aria-label="Explore">
+          <h4>Explore</h4>
+          <a href="index.html#programs">Programs</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="index.html#stories">Stories</a>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <a href="invite-teqia.html">Invite Teqia</a>
+          <a href="report-a-concern.html">Report a concern</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <nav class="footer-col footer-col-small" aria-label="Legal">
+          <h4>Legal</h4>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="main.js?v=6" defer></script>
+    <script type="module" src="invite-teqia.js" defer></script>
+  </body>
+</html>

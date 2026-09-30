@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Report a concern – Teqia Grassroot Foundation</title>
+    <meta
+      name="description"
+      content="Report a safeguarding concern about a young person to Teqia Grassroot Foundation. No account needed, and you do not have to give your name."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=5" />
+    <script>
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("reveal-ready");
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Teqia home">
+          <img src="assets/teqia-logo.png" alt="" width="53" height="24" />
+          <span>Teqia</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html#programs">Programs</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="index.html#stories">Stories</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="link-quiet" href="/login">Log In</a>
+          <a class="btn btn-primary btn-sm" href="/donate">Donate</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-menu container" id="mobile-menu" hidden>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#stories">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="mobile-menu-actions">
+          <a class="btn btn-outline-primary" href="/login">Log In</a>
+          <a class="btn btn-primary" href="/donate">Donate</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="container page-hero">
+        <div class="page-hero-inner">
+          <p class="eyebrow">Safeguarding</p>
+          <h1>Report a concern about a young person.</h1>
+          <p class="lead">
+            If you are worried that a young person is being harmed or is at risk, tell Teqia.
+            You do not need an account, and you do not have to give your name.
+          </p>
+          <div class="note note-urgent">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M12 3l9 16H3l9-16Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M12 9v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <p>
+              <strong>If someone is in danger right now, do not use this form.</strong>
+              Call the police on 112 or 199, or take them to the nearest hospital. Then tell Teqia
+              on <a href="tel:+2349023302308">+234 902 330 2308</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container contact-grid">
+        <div class="panel panel-lg">
+          <h2>Tell us what happened</h2>
+          <p class="panel-intro">Write as much or as little as you know. Something is better than nothing.</p>
+
+          <form class="form" id="concern-form">
+            <fieldset class="field">
+              <legend>What is this about?</legend>
+              <p class="form-note" style="margin-bottom:10px">Pick whichever is closest. If none fit, choose the last one.</p>
+              <div class="checks">
+                <label class="check"><input type="radio" name="category" value="harm" required /> <span>A young person is being harmed or is at risk</span></label>
+                <label class="check"><input type="radio" name="category" value="adult-conduct" /> <span>How an adult at Teqia behaved</span></label>
+                <label class="check"><input type="radio" name="category" value="bullying" /> <span>Bullying or harassment between students</span></label>
+                <label class="check"><input type="radio" name="category" value="online" /> <span>Something that happened online</span></label>
+                <label class="check"><input type="radio" name="category" value="wellbeing" /> <span>I am worried about someone's wellbeing</span></label>
+                <label class="check"><input type="radio" name="category" value="other" /> <span>Something else</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="detail">What happened?</label>
+              <textarea id="detail" name="detail" rows="7" required placeholder="Tell us what you saw, heard or were told. Dates, places and names help, but tell us even if you only know a little."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="about">Who is this about? <span class="optional">Optional, if you know</span></label>
+              <div class="input-wrap">
+                <input id="about" name="about" type="text" placeholder="A name, a class, or where it happened" />
+              </div>
+            </div>
+
+            <fieldset class="field panel-inset">
+              <legend>Your name</legend>
+              <p class="form-note" style="margin-bottom:12px">
+                You do not have to give it. Teqia will look into the report either way. Leaving your
+                name lets the safeguarding lead come back to you if something is unclear.
+              </p>
+              <div class="field-row">
+                <div class="field">
+                  <label for="reporter">Your name</label>
+                  <div class="input-wrap">
+                    <input id="reporter" name="reporter" type="text" autocomplete="name" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="contact">Email or phone</label>
+                  <div class="input-wrap">
+                    <input id="contact" name="contact" type="text" />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <p class="form-note">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" /></svg>
+              This goes to Teqia's safeguarding lead and nobody else. Not to mentors, not to the
+              programme team. Every time the record is opened, Teqia notes who opened it.
+            </p>
+
+            <button class="btn btn-primary btn-submit" type="submit">
+              Send this report
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </button>
+
+            <p class="form-status" id="form-status" role="status" hidden></p>
+          </form>
+        </div>
+
+        <div class="stack">
+          <div class="panel">
+            <h2>What happens next</h2>
+            <p>
+              It reaches one person: Teqia's safeguarding lead. They aim to look at it within
+              24 hours, and the same day if it is serious.
+            </p>
+          </div>
+          <div class="panel">
+            <h2>Teqia may have to tell someone</h2>
+            <p>
+              If a child is at risk of serious harm, Teqia has to involve the authorities. Teqia
+              will tell you if that happens, unless doing so would put someone in more danger.
+            </p>
+          </div>
+          <div class="panel">
+            <h2>Rather say it out loud?</h2>
+            <p>Call <a href="tel:+2349023302308">+234 902 330 2308</a> and say you are reporting a safeguarding concern.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Teqia home">
+            <img src="assets/teqia-logo.png" alt="" width="53" height="24" />
+            <span>Teqia</span>
+          </a>
+          <p>© <span data-year>2026</span> Teqia Grassroot Foundation. Empowering Africa's digital future.</p>
+          <p class="footer-note">CAC Reg. No. 8061564 · Kaduna, Nigeria</p>
+        </div>
+        <nav class="footer-col" aria-label="Explore">
+          <h4>Explore</h4>
+          <a href="index.html#programs">Programs</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="index.html#stories">Stories</a>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <a href="invite-teqia.html">Invite Teqia</a>
+          <a href="report-a-concern.html">Report a concern</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <nav class="footer-col footer-col-small" aria-label="Legal">
+          <h4>Legal</h4>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="main.js?v=6" defer></script>
+    <script type="module" src="report-a-concern.js" defer></script>
+  </body>
+</html>
